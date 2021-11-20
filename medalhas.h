@@ -1,0 +1,13 @@
+#ifndef MEDALHAS_H_INCLUDED
+#define MEDALHAS_H_INCLUDED
+
+//CADASTRO DE MEDALHAS POR ATLETA
+void escreveBanco();
+//GERAR RELATORIO DE MEDALHAS
+void geraRelatorio();
+//DISTRIBUIÇÃO TOTAL DE MEDALHAS
+void totalMedalha();
+//DISTRIBUIÇÃO TOTAL DE MEDALHAS POR PAÍSES
+void totalPaises();
+
+#endif // MEDALHAS_H_INCLUDED

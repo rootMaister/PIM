@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "structs.h": "c",
+        "stdlib.h": "c",
+        "logi_menu.h": "c",
+        "medalhas.h": "c"
+    }
+}
