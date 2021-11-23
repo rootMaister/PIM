@@ -30,7 +30,7 @@ int main(){
                 peg = 0;
                 break;
             default:
-                printf("digite um n?mero v?lido");
+                printf("digite um numero valido");
         }
         printf("\n");
         //system("pause");

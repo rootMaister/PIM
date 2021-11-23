@@ -14,13 +14,13 @@ int inner_menu_medico()
     printf("          ---------------------------------  \n");
     printf("                 MEDIDAS                     \n");
     printf("          ---------------------------------  \n");
-    printf("           | 1 - CADASTRAR MEDICOS      |     \n");
+    printf("           | 1 - CADASTRAR MEDICOS       |     \n");
     printf("           |-----------------------------|   \n");
     printf("           | 2 - LISTAR MEDICOS          |   \n");
     printf("           |-----------------------------|   \n");
     printf("           | 9 - VOLTAR                  |   \n");
     printf("           |-----------------------------|   \n");
-    printf("           | 10 - SAIR                    |  \n");
+    printf("           | 10 - SAIR                   |  \n");
     printf("          ---------------------------------  \n");
 
     scanf("%i", &op);

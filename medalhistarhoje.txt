@@ -1,5 +1,0 @@
-TOTAL DE MEDALHAS
- 1    Medalhas de Ouro
- 0    Medalhas de Prata
- 0    Medalhas de Bronze
- 0    Medalhas SEM metal

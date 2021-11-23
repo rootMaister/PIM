@@ -17,13 +17,13 @@ int inner_menu_local_treino()
     printf("          ---------------------------------  \n");
     printf("                 AGENDAR TREINOS             \n");
     printf("          ---------------------------------  \n");
-    printf("           | 1 - AGENDAR TREINO        |     \n");
+    printf("           | 1 - AGENDAR TREINO          |     \n");
     printf("           |-----------------------------|   \n");
     printf("           | 2 - LISTAR TREINOS          |   \n");
     printf("           |-----------------------------|   \n");
     printf("           | 9 - VOLTAR                  |   \n");
     printf("           |-----------------------------|   \n");
-    printf("           | 10 - SAIR                    |  \n");
+    printf("           | 10 - SAIR                   |  \n");
     printf("          ---------------------------------  \n");
 
     scanf("%i", &op);
@@ -55,7 +55,7 @@ void cadastroLocalTreino()
 
     pont_arq = fopen("banco/banco-locaisTreinos.txt", "a");
 
-    if(pont_arq == NULL){
+    if(get_size("banco/banco-locaisTreinos.txt") == 0){
         printf("Erro na abertura do arquivo!");
         return 1;
     }

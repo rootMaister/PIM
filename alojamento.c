@@ -16,13 +16,13 @@ int inner_menu_alojamento()
     printf("          ---------------------------------  \n");
     printf("                  ALOJAMENTO                    \n");
     printf("          ---------------------------------  \n");
-    printf("           | 1 - CADASTRAR ALOJAMENTO        |   \n");
+    printf("           | 1 - CADASTRAR ALOJAMENTO    |   \n");
     printf("           |-----------------------------|   \n");
-    printf("           | 2 - LISTAR ALOJAMENTO         |    \n");
+    printf("           | 2 - LISTAR ALOJAMENTO       |    \n");
     printf("           |-----------------------------|   \n");
     printf("           | 9 - VOLTAR                  |   \n");
     printf("           |-----------------------------|   \n");
-    printf("           | 10 - SAIR                    |  \n");
+    printf("           | 10 - SAIR                   |  \n");
     printf("          ---------------------------------  \n");
 
     scanf("%i", &op);
@@ -59,7 +59,7 @@ void cadAlojamento(){
     FILE *arquivo;
 
     arquivo = fopen("banco/banco-alojamento.txt", "r");
-    if (arquivo == NULL)
+    if (get_size("banco/banco-alojamento.txt") == 0)
     {
         arquivo = fopen("banco/banco-alojamento.txt", "a+");
         fprintf(arquivo, "----------------------------------------------------------------------------------------\n");
@@ -105,7 +105,7 @@ void mostraAlojamento(){
 
     bancoAlojamento = fopen("banco/banco-alojamento.txt", "r");
 
-    if (bancoAlojamento == NULL)
+    if (get_size("banco/banco-alojamento.txt") == 0)
     {
         printf("NÃ£o existem alojamentos cadastrados ainda! Por favor cadastre um.\n");
         system("pause");

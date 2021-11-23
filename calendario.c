@@ -16,13 +16,13 @@ int inner_menu_calendario()
     printf("          ---------------------------------  \n");
     printf("                  CALENDARIO                    \n");
     printf("          ---------------------------------  \n");
-    printf("           | 1 - CADASTRAR DATA        |   \n");
+    printf("           | 1 - CADASTRAR DATA          |   \n");
     printf("           |-----------------------------|   \n");
-    printf("           | 2 - LISTAR CALENDÁRIO          |    \n");
+    printf("           | 2 - LISTAR CALENDÁRIO       |    \n");
     printf("           |-----------------------------|   \n");
     printf("           | 9 - VOLTAR                  |   \n");
     printf("           |-----------------------------|   \n");
-    printf("           | 10 - SAIR                    |  \n");
+    printf("           | 10 - SAIR                   |  \n");
     printf("          ---------------------------------  \n");
 
     scanf("%i", &op);
@@ -59,7 +59,7 @@ void guardaData(){
     FILE *arquivo;
 
     arquivo = fopen("banco/calendario.txt", "r");
-    if (arquivo == NULL)
+    if (get_size("banco/calendario.txt") == 0)
     {
         arquivo = fopen("banco/calendario.txt", "a+");
         fprintf(arquivo, "----------------------------------------------------------------------------------------\n");
@@ -105,7 +105,7 @@ void mostraData(){
 
     bancoCalendario = fopen("banco/calendario.txt", "r");
 
-    if (bancoCalendario == NULL)
+    if (get_size("banco/calendario.txt") == 0)
     {
         printf("NÃ£o existem datas cadastradas ainda! Por favor cadastre uma.\n");
         system("pause");

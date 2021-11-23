@@ -10,8 +10,27 @@
 #include "equipamento.c"
 #include "calendario.c"
 #include "alojamento.c"
+#include "modalidade.c"
+#include "login.c"
 
 void menu_main(){
+    system("cls");
+    printf("          ---------------------------------  \n");
+    printf("                    OLIMPIADAS 2024          \n");
+    printf("          ---------------------------------  \n");
+    printf("                  ESCOLHA UMA OPCAO          \n");
+    printf("          ---------------------------------  \n");
+    printf("           | 1 - RELATORIOS              |   \n");
+    printf("           |-----------------------------|   \n");
+    printf("           | 2 - CADASTROS E LISTAGENS   |   \n");
+    printf("           |-----------------------------|   \n");
+    printf("           | 3 - GERENCIAMENTO          |   \n");
+    printf("           |-----------------------------|   \n");
+    printf("           | 4 - AGENDAR LOCAL TREINOS   |   \n");
+    printf("           |-----------------------------|   \n");
+    printf("           | 11 - SAIR                   |   \n");
+    printf("          ---------------------------------  \n");
+    /*
     system("cls");
     printf("\n");
     printf("OLIMPIADAS 2024\n");
@@ -28,6 +47,7 @@ void menu_main(){
     printf("\n");
     printf("11 - SAIR\n");
     printf("\n");
+    */
 }
 
 void menu_atleta(){
@@ -35,66 +55,69 @@ void menu_atleta(){
     printf("          ---------------------------------  \n");
     printf("                  OLIMPIADAS 2024            \n");
     printf("          ---------------------------------  \n");
-    printf("                  ESCOLHA UMA OP??O          \n");
+    printf("                  ESCOLHA UMA OPCAO          \n");
     printf("          ---------------------------------  \n");
-    printf("           | 1 - CADASTRAR ATLETA        |   \n");
+    if (nivelPermissao == 1)
+    {   
+        printf("%i", nivelPermissao);
+        printf("           | 1 - CADASTRAR ATLETA        |   \n");   
+    }
     printf("           |-----------------------------|   \n");
-    printf("           | 2 - LISTAR ATLETA          |   \n");
+    printf("           | 2 - LISTAR ATLETA           |   \n");
     printf("           |-----------------------------|   \n");
-    printf("           | 10 - VOLTAR                  |   \n");
+    printf("           | 10 - VOLTAR                 |   \n");
     printf("           |-----------------------------|   \n");
-    printf("           | 11 - SAIR                    |   \n");
+    printf("           | 11 - SAIR                   |   \n");
     printf("          ---------------------------------  \n");
 }
 
 void menu_consulta(){
     system("cls");
-    printf("          ---------------------------------  \n");
-    printf("                  OLIMPIADAS 2024            \n");
-    printf("          ---------------------------------  \n");
-    printf("                     RELAT?RIOS              \n");
-    printf("          ---------------------------------  \n");
-    printf("                  ESCOLHA UMA OP??O          \n");
-    printf("          ---------------------------------  \n");
-    printf("           | 1 - CADASTRO DE MEDALHAS POR ATLETA    |   \n");
-    printf("           |-----------------------------|   \n");
-    printf("           | 2 - GERAR RELATORIO DE MEDALHAS   |   \n");
-    printf("           |-----------------------------|   \n");
-    printf("           | 3 - DISTRIBUIÇÃO TOTAL DE MEDALHAS  |   \n");
-    printf("           |-----------------------------|   \n");
-    printf("           | 4 - DISTRIBUIÇÃO TOTAL DE MEDALHAS POR PAÍS    |   \n");
-    printf("           |-----------------------------|   \n");
-    printf("           | 5 - CALENDÁRIO OLÍMPICO     |   \n");
-    printf("           |-----------------------------|   \n");
-    printf("           | 10 - SAIR                    |   \n");
-    printf("          ---------------------------------  \n");
-    printf("           | 11 - SAIR                    |   \n");
-    printf("          ---------------------------------  \n");
+    printf("          ------------------------------------------  \n");
+    printf("                       OLIMPIADAS 2024                \n");
+    printf("          ------------------------------------------  \n");
+    printf("                          RELATARIOS                  \n");
+    printf("          ------------------------------------------  \n");
+    printf("                       ESCOLHA UMA OPCAO              \n");
+    printf("          ------------------------------------------  \n");
+    printf("           | 1 - CADASTRO DE MEDALHAS POR ATLETA  |   \n");
+    printf("           |--------------------------------------|   \n");
+    printf("           | 2 - GERAR RELATORIO DE MEDALHAS      |   \n");
+    printf("           |--------------------------------------|   \n");
+    printf("           | 3 - DISTRIBUICAO DE MEDALHAS         |   \n");
+    printf("           |--------------------------------------|   \n");
+    printf("           | 4 - DISTRIBUICAO DE MEDALHAS POR PAIS|   \n");
+    printf("           |--------------------------------------|   \n");
+    printf("           | 5 - CALENDARIO OLIMPICO              |   \n");
+    printf("           |--------------------------------------|   \n");
+    printf("           | 10 - VOLTAR                          |   \n");
+    printf("           |--------------------------------------|   \n");
+    printf("           | 11 - SAIR                            |   \n");
+    printf("          -------------------------------------------  \n");
 }
 
 void menu_cadastro_menuu(){
     system("cls");
     printf("          ---------------------------------  \n");
-    printf("                  OLIMPIADAS 2024            \n");
+    printf("                    OLIMPIADAS 2024          \n");
     printf("          ---------------------------------  \n");
-    printf("                      CADASTROS E LISTAGENS              \n");
+    printf("                CADASTROS E LISTAGENS        \n");
     printf("          ---------------------------------  \n");
-    printf("                  ESCOLHA UMA OP??O          \n");
+    printf("                    ESCOLHA UMA OPCAO        \n");
     printf("          ---------------------------------  \n");
-    printf("           | 1 - ATLETAS   |   \n");
+    printf("           | 1 - ATLETAS                 |   \n");
     printf("           |-----------------------------|   \n");
-    printf("           | 2 - EQUIPES   |   \n");
+    printf("           | 2 - EQUIPES                 |   \n");
     printf("           |-----------------------------|   \n");
-    printf("           | 3 - MODALIDADES OL?MPICAS   |   \n");
+    printf("           | 3 - MODALIDADES OLIMPICAS   |   \n");
     printf("           |-----------------------------|   \n");
-    printf("           | 4 - EQUIPAMENTOS       |   \n");
+    printf("           | 4 - EQUIPAMENTOS            |   \n");
     printf("           |-----------------------------|   \n");
-    printf("           | 5 - ALOJAMENTO DOS ATLETAS |   \n");
+    printf("           | 5 - ALOJAMENTO DOS ATLETAS  |   \n");
     printf("           |-----------------------------|   \n");
-    printf("           | 6 - MÉDICOS E RESPECTIVAS EQUIPES     |   \n");
+    printf("           | 6 - MEDICOS E EQUIPES       |   \n");
     printf("           |-----------------------------|   \n");
-    printf("           | 7 - MEDIDAS DE PREVENÇÃO AO COVID 19    |   \n");
-    printf("           |-----------------------------|   \n");
+    printf("           | 7 - PREVENCAO AO COVID-19   |   \n");
     printf("           |-----------------------------|   \n");
     printf("           | 10 - VOLTAR                 |   \n");
     printf("           |-----------------------------|   \n");
@@ -104,8 +127,28 @@ void menu_cadastro_menuu(){
 }
 
 void menu_gerenciamento(){
-    system("cls");
+    system("cls");    
+    printf("          ------------------------------------------  \n");
+    printf("                          OLIMPIADAS 2024             \n");
+    printf("          ------------------------------------------  \n");
+    printf("                          GERENCIAMENTO               \n");
+    printf("          ------------------------------------------  \n");
+    printf("                       ESCOLHA UMA OPCAO              \n");
+    printf("          ------------------------------------------  \n");
+    printf("           | 1 - CADASTRO DE USUÁRIOS             |   \n");
+    printf("           |--------------------------------------|   \n");
+    printf("           | 2 - CADASTRO DE FUNCIONARIOS         |   \n");
+    printf("           |--------------------------------------|   \n");
+    printf("           | 3 - CADASTRO DE VOLUNTARIOS          |   \n");
+    printf("           |--------------------------------------|   \n");
+    printf("           | 4 - CONTROLE DE CONTINGENTE          |   \n");
+    printf("           |--------------------------------------|   \n");
+    printf("           | 10 - VOLTAR                          |   \n");
+    printf("           |--------------------------------------|   \n");
+    printf("           | 11 - SAIR                            |   \n");
+    printf("          -------------------------------------------  \n");
     printf("\n");
+    /*
     printf("OLIMPIADAS 2024\n");
     printf("\n");
     printf("GERENCIAMENTO\n");
@@ -124,6 +167,7 @@ void menu_gerenciamento(){
     printf("\n");
     printf("11 - SAIR\n");
     printf("\n");
+    */
 }
 int logi_menu_atle(){
     int escolha;
@@ -280,7 +324,7 @@ int logi_menu_cad(){
                 inner_menu_equipe();
                 break;
             case 3:
-                printf("MODALIDADES");
+                inner_menu_modalidade();
                 break;
             case 4:
                 inner_menu_equipamento();

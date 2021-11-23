@@ -15,13 +15,13 @@ int inner_menu_equipe()
     printf("          ---------------------------------  \n");
     printf("                  EQUIPES          \n");
     printf("          ---------------------------------  \n");
-    printf("           | 1 - CADASTRAR EQUIPES        |   \n");
+    printf("           | 1 - CADASTRAR EQUIPES       |   \n");
     printf("           |-----------------------------|   \n");
     printf("           | 2 - LISTAR EQUIPES          |   \n");
     printf("           |-----------------------------|   \n");
     printf("           | 9 - VOLTAR                  |   \n");
     printf("           |-----------------------------|   \n");
-    printf("           | 10 - SAIR                    |   \n");
+    printf("           | 10 - SAIR                   |   \n");
     printf("          ---------------------------------  \n");
 
     scanf("%i", &op);
@@ -57,7 +57,7 @@ int buscaIdEquipe(){
     
     bancoEquipes = fopen("banco/banco-equipes.txt", "a+");
 
-    if (bancoEquipes == NULL)
+    if (get_size("banco/banco-equipes.txt") == 0)
     {
         equipes.id = 0;
         fclose(bancoEquipes);
@@ -112,7 +112,9 @@ void cadastroEquipes(){
     }
 
     fclose(bancoEquipes);
-    inner_menu_equipe();
+
+    listarEquipes();
+    return 1;
 
 }
 
@@ -128,10 +130,11 @@ void listarEquipes(){
 
     bancoEquipes = fopen("banco/banco-equipes.txt", "r");
 
-    if (bancoEquipes == NULL)
+    if (get_size("banco/banco-equipes.txt") == 0)
     {
         printf("Não existem equipes cadastradas ainda! Por favor cadastre equipes em Cadastro de Equipes.\n");
         system("pause");
+        cadastroEquipes();
     }
     else
     {

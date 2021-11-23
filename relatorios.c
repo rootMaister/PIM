@@ -36,7 +36,7 @@ void escreveBanco(){
     }
 
 
-    arquivo = fopen("bancoMA.txt", "a+");
+    arquivo = fopen("banco/bancoMA.txt", "a+");
     fprintf(arquivo, "%-10s %-10s %s", medalha, pais, nome);
     fclose(arquivo);
 }
@@ -47,6 +47,7 @@ void geraRelatorio(){
     char linha[100];
     char nomeA[100];
     char extesao[5] = ".txt";
+    char banco[10] = "banco/";
     int c = 0;
 
     printf("Digite o nome do relatorio: ");
@@ -54,6 +55,7 @@ void geraRelatorio(){
     scanf("%s", &nomeA);
 
     strncat(nomeA, extesao, 10);
+    strncat(banco, nomeA, 20);
 
     FILE *arquivoMA;
     FILE *arquivoRE;
@@ -64,7 +66,7 @@ void geraRelatorio(){
         arquivoMA = fopen("banco/bancoMA.txt", "a+");
     }
 
-    arquivoRE = fopen(nomeA, "w");
+    arquivoRE = fopen(banco, "w");
 
     while(1){
         fgets(linha, 100, arquivoMA);
@@ -86,6 +88,7 @@ void totalMedalha(){
     char linha[100];
     char nomeA[100];
     char extesao[5] = ".txt";
+    char banco[10] = "banco/";
 
     int totalOuro = 0;
     int totalPrata = 0;
@@ -97,6 +100,7 @@ void totalMedalha(){
     scanf("%s", &nomeA);
 
     strncat(nomeA, extesao, 10);
+    strncat(banco, nomeA, 20);
 
     FILE *arquivoMA;
     FILE *arquivoRE;
@@ -106,7 +110,7 @@ void totalMedalha(){
     if(arquivoMA == NULL){
         arquivoMA = fopen("banco/bancoMA.txt", "a+");
     }
-    arquivoRE = fopen(nomeA, "w");
+    arquivoRE = fopen(banco, "w");
 
     while(1){
         fgets(linha, 100, arquivoMA);
@@ -139,12 +143,14 @@ void totalPaises(){
     char linha[100];
     char nomeA[100];
     char extesao[5] = ".txt";
+    char banco[10] = "banco/";
 
     printf("Digite o nome do relatorio: ");
     fflush(stdin);
     scanf("%s", &nomeA);
 
     strncat(nomeA, extesao, 10);
+    strncat(banco, nomeA, 20);
 
     struct Pais {
         char sigla[2];
@@ -214,7 +220,7 @@ void totalPaises(){
     }
     fclose(arquivoDI);
 
-    arquivoRE = fopen(nomeA, "w");
+    arquivoRE = fopen(banco, "w");
     fprintf(arquivoRE, "TOTAL DE MEDALHAS POR PAIS\n");
 
     for(int i = 0; i < tamanhoPaises; i++){

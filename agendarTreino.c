@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "structs.h"
 
-#define MAX_CHAR 90
 
 typedef struct DMA{
     int dia;
@@ -21,9 +21,9 @@ int inner_menu_agendar_treino()
     printf("          ---------------------------------  \n");
     printf("                 AGENDAMENTO DE TREINO       \n");
     printf("          ---------------------------------  \n");
-    printf("           | 1 - AGENDAR TREINO        |   \n");
+    printf("           | 1 - AGENDAR TREINO          |   \n");
     printf("           |-----------------------------|   \n");
-    printf("           | 2 - LISTAR TREINO        |   \n");
+    printf("           | 2 - LISTAR TREINO           |   \n");
     printf("           |-----------------------------|   \n");
     printf("           | 9 - VOLTAR                  |   \n");
     printf("           |-----------------------------|   \n");
@@ -49,7 +49,7 @@ int inner_menu_agendar_treino()
             printf("sair");
             abort();
         default:
-        printf("Escolha uma opção valida selecionando um número acima: ");
+        printf("Escolha uma opcao valida selecionando um numero acima: ");
     }
 }
 
@@ -64,7 +64,7 @@ int agendarTreino()
 
     pont_arq = fopen("banco/treino.txt", "a");
 
-    if(pont_arq == NULL){
+    if(get_size("banco/treino.txt") == 0){
         printf("Erro na abertura do arquivo!");
         return 1;
     }

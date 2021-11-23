@@ -20,7 +20,7 @@ int inner_menu_medidas()
     printf("           |-----------------------------|   \n");
     printf("           | 9 - VOLTAR                  |   \n");
     printf("           |-----------------------------|   \n");
-    printf("           | 10 - SAIR                    |  \n");
+    printf("           | 10 - SAIR                   |  \n");
     printf("          ---------------------------------  \n");
 
     scanf("%i", &op);

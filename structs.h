@@ -4,7 +4,22 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-#define MAX_CHAR 500
+#define MAX_CHAR 400
+
+int get_size(const char* file_name)
+{
+    FILE *file = fopen(file_name, "r");
+
+    if(file == NULL)
+        return 0;
+
+    fseek(file, 0, SEEK_END);
+    int size = ftell(file);
+    fclose(file);
+
+    return size;
+}
+
 
 typedef struct atleta
 {

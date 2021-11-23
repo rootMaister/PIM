@@ -15,13 +15,13 @@ int inner_menu_voluntario()
     printf("          ---------------------------------  \n");
     printf("                  VOLUNTARIOS          \n");
     printf("          ---------------------------------  \n");
-    printf("           | 1 - CADASTRAR VOLUNTARIOS        |   \n");
+    printf("           | 1 - CADASTRAR VOLUNTARIOS   |   \n");
     printf("           |-----------------------------|   \n");
-    printf("           | 2 - LISTAR VOLUNTARIOS          |   \n");
+    printf("           | 2 - LISTAR VOLUNTARIOS      |   \n");
     printf("           |-----------------------------|   \n");
     printf("           | 9 - VOLTAR                  |   \n");
     printf("           |-----------------------------|   \n");
-    printf("           | 10 - SAIR                    |   \n");
+    printf("           | 10 - SAIR                   |   \n");
     printf("          ---------------------------------  \n");
 
     scanf("%i", &op);
@@ -134,8 +134,6 @@ void listarVoluntario(){
 
     bancoVoluntarios = fopen("banco/banco-voluntarios.txt", "r");
 
-    printf("até aqui foi. \n");
-    system("pause");
     while(fgets(voluntarios.nome, MAX_CHAR, bancoVoluntarios))
     {
         strtok(voluntarios.nome, "\n");

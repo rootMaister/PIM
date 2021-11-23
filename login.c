@@ -33,7 +33,7 @@ int cad_administrador(){
     static int linha;
     system("cls");
 
-    if (listaUsuarios == NULL)
+    if (listaUsuarios == NULL && sessao == 0)
     {
         printf("Seja bem vindo ao Sistema de Gerenciamento Olimpiadas 2024!\n");
         printf("Para o seu primeiro acesso, cadastre um nome e uma senha.\n");
@@ -55,9 +55,14 @@ int cad_administrador(){
     do
     {
         if ( strcmp(senha[linha], confirmaSenha[linha] ) == 0)
-        {
-            printf("Tudo certo para o seu acesso! Utilize nome e senha para fazer o seu primeiro login! \n");
-            system("pause");
+        {   
+            printf("Tudo certo para o seu acesso, %s!", nome[linha]);
+            if (sessao == 0)
+            {
+                printf("Utilize nome e senha para fazer o seu primeiro login! \n");
+                system("pause");
+            }
+            
             senhaConfirmada = 1;
         }
         else
@@ -115,7 +120,6 @@ int opcao;
 
 int LOGIN_Admin()
 {
-
     int verificaFimPermissao = 0;
 
     char nomeVerificacao[30], senhaVerificacao[20];
@@ -124,7 +128,7 @@ int LOGIN_Admin()
 
     static int linha;
     system("cls");
-    printf("LOGIN DE ACESSO ADMINISTRADOR:\n");
+    printf("LOGIN\n");
     printf("Nome:");
     fflush(stdin);
     scanf("%s", &nome[linha]);
@@ -134,20 +138,22 @@ int LOGIN_Admin()
     
     FILE *listaCadastro;
     listaCadastro = fopen("banco/lista-cadastro.txt", "r");
-    
-    while (!feof(listaCadastro))
-    {
+
+    while(1){
         fscanf(listaCadastro, "%s %s %i", &login.nome, &login.senha, &login.permissao);
         if (strcmp(nome[linha], login.nome) == 0 && strcmp(senha[linha], login.senha) == 0)
         {
             verificaFimPermissao = 1;
+            break;
         }
         else
         {
             verificaFimPermissao = 0;
         }
+        if(feof(listaCadastro) != 0){
+            break;
+        }
     }
-
     
     if (verificaFimPermissao == 0)
     {
@@ -213,5 +219,4 @@ int primeiroAcesso()
                 fclose(listaCadastro);
         return 0;
 }
-
 #endif

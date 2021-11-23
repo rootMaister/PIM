@@ -15,13 +15,13 @@ int inner_menu_funcionario()
     printf("          ---------------------------------  \n");
     printf("                  FUNCIONARIO          \n");
     printf("          ---------------------------------  \n");
-    printf("           | 1 - CADASTRAR FUNCIONÁRIOS        |   \n");
+    printf("           | 1 - CADASTRAR FUNCIONÁRIOS  |   \n");
     printf("           |-----------------------------|   \n");
-    printf("           | 2 - LISTAR FUNCIONÁRIOS          |   \n");
+    printf("           | 2 - LISTAR FUNCIONÁRIOS     |   \n");
     printf("           |-----------------------------|   \n");
     printf("           | 9 - VOLTAR                  |   \n");
     printf("           |-----------------------------|   \n");
-    printf("           | 10 - SAIR                    |   \n");
+    printf("           | 10 - SAIR                   |   \n");
     printf("          ---------------------------------  \n");
 
     scanf("%i", &op);
