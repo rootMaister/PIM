@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <locale.h>
 #include <string.h>
+#include "renderImg.c"
 #define qtd_cad 200
 
 char *nome[qtd_cad] [qtd_cad];
@@ -124,10 +125,14 @@ int LOGIN_Admin()
 
     char nomeVerificacao[30], senhaVerificacao[20];
 
+    FILE *logo_olimpiadas = fopen("logo-olimpiadas.txt", "r");
+
+    //renderImg(logo_olimpiadas);
+
+    system("cls");
     login login;
 
     static int linha;
-    system("cls");
     printf("LOGIN\n");
     printf("Nome:");
     fflush(stdin);
@@ -149,7 +154,9 @@ int LOGIN_Admin()
         else
         {
             verificaFimPermissao = 0;
+            break;
         }
+
         if(feof(listaCadastro) != 0){
             break;
         }

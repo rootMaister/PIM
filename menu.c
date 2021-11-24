@@ -10,7 +10,7 @@
 #include "agendarTreino.c"
 
 int menu(){
-
+    
     int opcao;
     int peg = 1;
     setlocale(LC_ALL, "");

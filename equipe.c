@@ -57,7 +57,7 @@ int buscaIdEquipe(){
     
     bancoEquipes = fopen("banco/banco-equipes.txt", "a+");
 
-    if (get_size("banco/banco-equipes.txt") == 0)
+    if (bancoEquipes == NULL)
     {
         equipes.id = 0;
         fclose(bancoEquipes);
@@ -93,7 +93,7 @@ void cadastroEquipes(){
         fflush(stdin);
 
         gets(equipe[i].nome);
-        printf("%i \n", contaId);
+
         equipes[i].id = contaId+1+i;
 
         fprintf(bancoEquipes, "%i %s\n", equipes[i].id, equipe[i].nome);
