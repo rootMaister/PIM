@@ -141,8 +141,6 @@ void menu_gerenciamento(){
     printf("           |--------------------------------------|   \n");
     printf("           | 3 - CADASTRO DE VOLUNTARIOS          |   \n");
     printf("           |--------------------------------------|   \n");
-    printf("           | 4 - CONTROLE DE CONTINGENTE          |   \n");
-    printf("           |--------------------------------------|   \n");
     printf("           | 10 - VOLTAR                          |   \n");
     printf("           |--------------------------------------|   \n");
     printf("           | 11 - SAIR                            |   \n");

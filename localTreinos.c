@@ -72,7 +72,7 @@ void cadastroLocalTreino()
 
     printf("Digite o nome do bairro correspondente: ");
     fflush(stdin);
-    fgets( bairro , MAX_CHAR, stdin);
+    fgets(bairro , MAX_CHAR, stdin);
     //fprintf(pont_arq, "%s", bairro);
 
 
@@ -80,7 +80,7 @@ void cadastroLocalTreino()
 
     printf("Digite o nome do estadio onde ocorrerá os jogos: ");
     fflush(stdin);
-    fgets( estadio , MAX_CHAR, stdin);
+    fgets(estadio , MAX_CHAR, stdin);
     //fprintf(pont_arq, "%s", estadio);
 
     strtok(cidadeSede, "\n");
