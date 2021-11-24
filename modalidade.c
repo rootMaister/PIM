@@ -128,6 +128,8 @@ void cadastroModalidade(){
 
     fclose(bancoModalidade);
     fflush(stdin);
+
+    return 1;
 }
 
 

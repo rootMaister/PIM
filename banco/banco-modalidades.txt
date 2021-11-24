@@ -1,0 +1,5 @@
+ID    MODALIDADE          
+1     skate eletrico 20w  
+2     bicicleta eltrica ca
+3     Raquetes ping pong c
+4     Raquete eletrica 20w 

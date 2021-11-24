@@ -88,8 +88,10 @@ void cadastroAtleta(){
     atleta atleta[MAX_CHAR], atletaCount;
 
     char **equipe[MAX_CHAR][MAX_CHAR];
+    char **modalidade[MAX_CHAR][90];
     int *id[MAX_CHAR];
     int selecao;
+    int selecaoModalidade = 0;
 
     char t_id[20] = "ID";
     char t_nome[20] = "NOME";
@@ -98,7 +100,7 @@ void cadastroAtleta(){
     char t_equipe[20] = "EQUIPE";
     char t_modalidade[20] = "MODALIDADE";
 
-    int op, i, j, contaId = 0;
+    int op, i, j, k, contaId = 0;
 
     FILE *bancoAtletas, *bancoModalidade, *bancoEquipe;
 
@@ -110,30 +112,48 @@ void cadastroAtleta(){
 
     if (get_size("banco/banco-atletas.txt") == 0)
     {
-        fprintf(bancoAtletas, "%-5s %-20.20s %-20.20s %-20.20s %-20.20s %-20.20s\n", t_id, t_nome, t_sobreNome, t_modalidade, t_pais, t_equipe);
+        fprintf(bancoAtletas, "%-5s %-20.20s %-20.20s %-20.20s %20.20s %-20.20s\n", t_id, t_nome, t_sobreNome, t_modalidade, t_pais, t_equipe);
     }
     
     contaId = buscaIdAtleta();
 
     for(i = 0; i <= MAX_CHAR; i ++){
 
-        printf("Nome do Atleta: ");
-        scanf("%s", &atleta[i].nome);
+        fflush(stdin);
+        printf("Primeiro nome do Atleta: ");
+        fgets(atleta[i].nome, 30, stdin);
+        strtok(atleta[i].nome, "\n");
+        //scanf("%s", &atleta[i].nome);
 
         printf("Sobrenome do Atleta: ");
         scanf("%s", &atleta[i].sobreNome);
 
+        system("cls");
+        listarModalidade();
+
+         for (k = 0; k < MAX_CHAR; k++)
+        {
+            fgets(modalidade[k], MAX_CHAR, bancoModalidade);
+        }
+
+        printf("\n");
+        printf("\n");
+        printf("Selecione uma modalidade acima digitando o Id: ");
         fflush(stdin);
-        printf("Modalidade: ");
-        fgets(atleta[i].modalidade, MAX_CHAR, stdin);
-        strtok(atleta[i].modalidade, "\n");
+        scanf("%i", &selecaoModalidade);
+
+
+        //fgets(atleta[i].modalidade, MAX_CHAR, stdin);
+        //strtok(atleta[i].modalidade, "\n");
         fflush(stdin);
 
-        printf("Pa�s de origem: ");
+        system("cls");
+        printf("Pa�s de origem do atleta: ");
         scanf("%s", &atleta[i].paisOrigem);
 
         fflush(stdin);
 
+        system("cls");
         listarEquipes();
 
         int tamanhoLista = 0;
@@ -144,20 +164,32 @@ void cadastroAtleta(){
             fgets(equipe[j], MAX_CHAR, bancoEquipe);
         }
 
-        printf("Selecione uma equipe acima: ");
+       
+        
+        printf("Selecione uma equipe acima digitando o id: ");
         fflush(stdin);
         scanf("%i", &selecao);
-        printf("%s", equipe[selecao-1]);
-        system("pause");
+
+        fflush(stdin);
+        printf("\n");
+        printf("\n");
+        printf("Equipe selecionada: %s\n", equipe[selecao-1]);
+      
+
         
         fflush(stdin);
 
         atleta[i].id = contaId+1+i;
+        printf("%-5i %-20.20s %-20.20s %-20.20s %20.20s %-20.20s\n", atleta[i].id, atleta[i].nome, atleta[i].sobreNome, modalidade[selecaoModalidade], atleta[i].paisOrigem, equipe[selecao-1]);
+        system("pause");
 
-        fprintf(bancoAtletas, "%-5i %-20.20s %-20.20s %-20.20s %-20.20s %-20.20s", atleta[i].id, atleta[i].nome, atleta[i].sobreNome, atleta[i].modalidade, atleta[i].paisOrigem, equipe[selecao-1]);
+        fflush(stdin);
+        fprintf(bancoAtletas, "%-5i %-20.20s %-20.20s %-20.20s %20.20s %-20.20s\n", atleta[i].id, atleta[i].nome, atleta[i].sobreNome, modalidade[selecaoModalidade], atleta[i].paisOrigem, equipe[selecao-1]);
 
-        fprintf(bancoModalidade, "%s \n", atleta[i].modalidade);
+        //fprintf(bancoModalidade, "%s \n", atleta[i].modalidade);
 
+        printf("\n");
+        printf("\n");
         printf("Continuar?\n");
         printf("1 - Continuar cadastrando.");
         printf("0 - Sair.");
