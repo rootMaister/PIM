@@ -38,7 +38,7 @@ int inner_menu_agendar_treino()
         break;
 
         case 2:
-            //listarEquipes();
+            mostraTreino();
         break;
 
         case 9:
@@ -62,12 +62,12 @@ int agendarTreino()
    
     FILE *pont_arq;
 
-    pont_arq = fopen("banco/treino.txt", "a");
+    pont_arq = fopen("banco/treino.txt", "a+");
 
-    if(get_size("banco/treino.txt") == 0){
-        printf("Erro na abertura do arquivo!");
-        return 1;
-    }
+    //if(get_size("banco/treino.txt") == 0){
+    //    printf("Erro na abertura do arquivo!");
+    //    return 1;
+    //}
 
     data data;
 
@@ -183,5 +183,40 @@ int agendarTreino()
 
         printf("Treinamento agendado com sucesso!");
 
+    return 1;
+}
+
+
+int mostraTreino(){
+    
+    system("cls");
+    char *pt_Local[MAX_CHAR];
+
+    FILE *bancoLocal;
+
+    bancoLocal = fopen("banco/treino.txt", "r");
+
+    if (get_size("banco/treino.txt") == 0)
+    {
+        printf("Nao existem treinos cadastrados ainda! Por favor cadastre um.\n");
+        system("pause");
+    }
+    else
+    {
+        while (fgets(pt_Local, MAX_CHAR, bancoLocal))
+        {
+            strtok(pt_Local, "\n");
+            printf("%s \n", pt_Local);
+        }
+
+        if (!feof(bancoLocal))
+        {
+            system("pause");
+        }
+
+    }
+
+    system("pause");
+    fclose(bancoLocal);
     return 1;
 }

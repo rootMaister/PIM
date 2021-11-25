@@ -17,9 +17,9 @@ int inner_menu_modalidade()
     printf("          ---------------------------------  \n");
     printf("                  MODALIDADE                     \n");
     printf("          ---------------------------------  \n");
-    printf("           | 1 - CADASTRAR MODALIDADE        |   \n");
+    printf("           | 1 - CADASTRAR MODALIDADE    |   \n");
     printf("           |-----------------------------|   \n");
-    printf("           | 2 - LISTAR MODALIDADE           |    \n");
+    printf("           | 2 - LISTAR MODALIDADE       |    \n");
     printf("           |-----------------------------|   \n");
     printf("           | 9 - VOLTAR                  |   \n");
     printf("           |-----------------------------|   \n");
