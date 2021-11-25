@@ -162,6 +162,7 @@ void cadastroAtleta(){
         for (j = 0; j < MAX_CHAR; j++)
         {
             fgets(equipe[j], MAX_CHAR, bancoEquipe);
+            strtok(equipe[j], "\n");
         }
 
        
