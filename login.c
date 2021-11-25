@@ -154,7 +154,7 @@ int LOGIN_Admin()
         else
         {
             verificaFimPermissao = 0;
-            break;
+            //break;
         }
 
         if(feof(listaCadastro) != 0){

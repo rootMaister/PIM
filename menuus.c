@@ -24,7 +24,7 @@ void menu_main(){
     printf("           |-----------------------------|   \n");
     printf("           | 2 - CADASTROS E LISTAGENS   |   \n");
     printf("           |-----------------------------|   \n");
-    printf("           | 3 - GERENCIAMENTO          |   \n");
+    printf("           | 3 - GERENCIAMENTO           |   \n");
     printf("           |-----------------------------|   \n");
     printf("           | 4 - AGENDAR LOCAL TREINOS   |   \n");
     printf("           |-----------------------------|   \n");

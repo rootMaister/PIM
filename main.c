@@ -14,9 +14,9 @@
 #include "menu.c"
 
 int main(){
-
+    system("mkdir banco");
     if (primeiroAcesso() == 1)
-    {
+    {   
         menu();
     }
    return 0;
